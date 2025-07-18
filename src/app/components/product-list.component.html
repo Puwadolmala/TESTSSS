@@ -1,0 +1,55 @@
+<div class="p-4">
+  <!-- ปุ่มไอคอนที่มุมขวาบน -->
+  <div class="absolute top-4 right-4">
+    <!-- ปุ่มไอคอนที่ไปหน้า /form -->
+    <button mat-icon-button (click)="goToForm()">
+      <mat-icon>add</mat-icon> <!-- ใช้ไอคอน + -->
+    </button>
+
+    <!-- ปุ่มไอคอนที่ไปหน้า /cards -->
+    <button mat-icon-button (click)="goToCards()">
+      <mat-icon>view_list</mat-icon> <!-- ใช้ไอคอน view_list -->
+    </button>
+  </div>
+
+  <!-- เปลี่ยนจาก mat-select เป็น select ปกติ -->
+  <div class="w-full mb-4">
+    <label for="category" class="block text-lg text-gray-700">เลือกหมวดหมู่</label>
+    <select id="category" [(ngModel)]="category" (change)="filter()" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <option value="">ทั้งหมด</option>
+      <option value="เครื่องดื่ม">เครื่องดื่ม</option>
+      <option value="เบเกอรี่">เบเกอรี่</option>
+      <option value="ของว่าง">ของว่าง</option>
+    </select>
+  </div>
+
+  <!-- ตารางแสดงข้อมูลสินค้า -->
+  <table mat-table [dataSource]="filtered" class="mat-elevation-z2 w-full">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>ชื่อสินค้า</th>
+      <td mat-cell *matCellDef="let p">{{ p.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>หมวดหมู่</th>
+      <td mat-cell *matCellDef="let p">{{ p.category }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>สถานะ</th>
+      <td mat-cell *matCellDef="let p">
+        {{ p.isAvailable ? '✔ มีสินค้า' : '❌ ไม่มีสินค้า' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>จัดการ</th>
+      <td mat-cell *matCellDef="let p">
+        <button mat-button color="warn" (click)="delete(p.id)">ลบ</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name','category','status','action']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name','category','status','action'];"></tr>
+  </table>
+</div>

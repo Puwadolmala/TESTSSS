@@ -1,0 +1,40 @@
+<div class="login-container">
+  <div class="login-form">
+    <h2 class="login-title">เข้าสู่ระบบ</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
+      
+      <!-- ช่องกรอกชื่อผู้ใช้ -->
+      <div class="input-container">
+        <label for="username">ชื่อผู้ใช้</label>
+        <input
+          matInput
+          id="username"
+          formControlName="username"
+          placeholder="กรอกชื่อผู้ใช้"
+          required
+          class="input-field"
+        />
+      </div>
+
+      <!-- ช่องกรอกรหัสผ่าน -->
+      <div class="input-container">
+        <label for="password">รหัสผ่าน</label>
+        <input
+          matInput
+          id="password"
+          formControlName="password"
+          type="password"
+          placeholder="กรอกรหัสผ่าน"
+          required
+          (keydown.enter)="onSubmit()"
+          class="input-field"
+        />
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">เข้าสู่ระบบ</button>
+
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>

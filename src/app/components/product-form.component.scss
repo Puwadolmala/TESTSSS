@@ -1,0 +1,172 @@
+/* เพิ่มระยะห่างและขนาดของฟอร์ม */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* เพิ่มระยะห่างระหว่างฟอร์ม */
+  width: 100%; /* ขยายความกว้างของฟอร์มให้เต็มหน้าจอ */
+  max-width: 100%; /* กำหนดขนาดให้เต็มที่ */
+  margin: auto; /* จัดฟอร์มให้อยู่ตรงกลาง */
+  padding: 2rem;
+  background-color: #e6f7ff; /* พื้นหลังฟ้าอ่อน */
+  border-radius: 12px; /* เพิ่มความโค้งของมุม */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ฟอร์ม */
+}
+
+/* ไอคอนย้อนกลับที่มุมซ้ายบน */
+button.back-button {
+  position: absolute;
+  top: 10px;  /* ย้ายขึ้นมาจากมุมเล็กน้อย */
+  left: 10px;  /* ตำแหน่งมุมซ้ายบน */
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 8px;  /* ลดขนาดปุ่ม */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;  /* ไอคอนเล็กลง */
+}
+
+button.back-button:hover {
+  background-color: #f0f4f8;
+}
+
+/* เพิ่มกรอบและปรับแต่งหัวข้อ Add Product */
+h2 {
+  font-size: 2.5rem;  /* ขนาดตัวอักษรใหญ่ขึ้น */
+  font-weight: 700;
+  color: #007bff; /* สีฟ้า */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  background-color: #fff; /* พื้นหลังสีขาว */
+  border-radius: 8px;
+  border: 2px solid #007bff; /* เส้นขอบฟ้า */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* เงาฟ้า */
+  margin-bottom: 2rem; /* ระยะห่างระหว่างหัวข้อกับฟอร์ม */
+}
+
+/* เพิ่มไอคอนด้านข้าง */
+h2 mat-icon {
+  font-size: 2rem;
+  color: #007bff; /* สีฟ้า */
+}
+
+/* ปรับสไตล์ของฟิลด์อินพุต (input, select) */
+input,
+select {
+  padding: 1.25rem;  /* เพิ่มขนาด padding */
+  font-size: 1.5rem;  /* ขยายขนาดตัวอักษร */
+  height: 60px; /* เพิ่มความสูงของช่องกรอกข้อมูล */
+  border: 1px solid #a2c8f3; /* สีฟ้าอ่อน */
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* ให้เต็มความกว้าง */
+  background-color: #fff; /* พื้นหลังเป็นสีขาว */
+}
+
+/* เมื่ออินพุตหรือ select ได้รับการโฟกัส */
+input:focus,
+select:focus {
+  border-color: #007bff; /* สีฟ้าเข้มเมื่อโฟกัส */
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* เพิ่มเงาขณะโฟกัส */
+}
+
+/* ปรับแต่งป้ายชื่อ (label) */
+label {
+  font-size: 1.5rem; /* ขยายขนาดตัวอักษรของ label */
+  font-weight: 600;
+  color: #007bff; /* สีฟ้าเข้ม */
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* เพิ่มระยะห่างระหว่างปุ่มบันทึกสินค้า */
+button {
+  background-color: #007bff; /* สีฟ้า */
+  color: white;
+  padding: 1rem;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3; /* สีฟ้าเข้มเมื่อ hover */
+}
+
+/* ปรับแต่งสไตล์ของ check box */
+mat-checkbox {
+  font-size: 1rem;
+}
+
+/* ปรับขนาดของไอคอนที่อยู่ในป้าย */
+mat-icon {
+  font-size: 1.5rem;
+}
+
+/* เพิ่มระยะห่างระหว่างไอคอนและข้อความในฟอร์ม */
+mat-icon.mat-icon {
+  margin-left: 8px;
+}
+
+/* เพิ่มระยะห่างระหว่างฟิลด์ต่างๆ */
+div.w-full {
+  margin-bottom: 1.5rem;
+}
+
+/* ปรับแต่ง select */
+select {
+  padding: 1.25rem;
+  font-size: 1.25rem; /* ขยายขนาดตัวอักษร */
+  border: 1px solid #a2c8f3; /* สีฟ้าอ่อน */
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem; /* เพิ่มระยะห่างจาก label */
+}
+
+/* ปรับการแสดงผลของตัวเลือก select */
+option {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333; /* สีตัวอักษรใน option */
+}
+
+/* เพิ่มสไตล์การแสดงผลของ dropdown */
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* เพิ่มเงาขณะโฟกัส */
+}
+
+/* ทำให้ select ดูเหมือนสวยงาม และเพิ่มระยะห่าง */
+select:focus-visible {
+  border-color: #007bff; /* สีฟ้าเมื่อ focus */
+  outline: none;
+  background-color: #e6f7ff; /* เปลี่ยนพื้นหลังเมื่อตัวเลือกถูกเลือก */
+}
+
+/* ปรับการจัดตำแหน่งให้ select อยู่กลางฟอร์ม */
+div.relative {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ปรับแต่งการแสดงผลของไอคอน */
+mat-icon.mat-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #ccc;
+}

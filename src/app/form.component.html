@@ -1,0 +1,42 @@
+
+<div class="min-h-screen bg-gradient-to-r from-blue-100 via-white to-blue-50 flex items-center justify-center py-12 px-4">
+  <div class="bg-white rounded-3xl shadow-lg p-10 w-full max-w-2xl border border-blue-200 space-y-6">
+    <h2 class="text-3xl font-bold text-blue-800 flex items-center justify-center gap-2 mb-8">
+      <mat-icon class="text-blue-600 text-4xl">add_box</mat-icon>
+      เพิ่มสินค้าใหม่
+    </h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
+
+      <!-- Product Name -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>ชื่อสินค้า</mat-label>
+        <input matInput formControlName="name" placeholder="กรอกชื่อสินค้า" class="w-full" />
+        <mat-icon matSuffix>shopping_cart</mat-icon>
+        <mat-hint>เช่น ชานมไข่มุก, ขนมเค้ก</mat-hint>
+      </mat-form-field>
+
+      <!-- Category -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>หมวดหมู่สินค้า</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="1">หมวดหมู่ 1</mat-option>
+          <mat-option value="2">หมวดหมู่ 2</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>category</mat-icon>
+      </mat-form-field>
+
+      <!-- Description -->
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>คำอธิบาย</mat-label>
+        <textarea matInput formControlName="description" placeholder="รายละเอียดสินค้า" class="w-full"></textarea>
+      </mat-form-field>
+
+      <!-- Checkbox -->
+      <mat-checkbox formControlName="hasDiscount">มีสินค้าในส่วนลด</mat-checkbox>
+
+      <!-- Submit -->
+      <button mat-raised-button color="primary" class="w-full" type="submit">บันทึกสินค้า</button>
+    </form>
+  </div>
+</div>

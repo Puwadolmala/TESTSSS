@@ -1,0 +1,7 @@
+
+<div *ngIf="show" class="modal">
+  <h3>{{ product?.name }}</h3>
+  <p>หมวดหมู่: {{ product?.category }}</p>
+  <p>สถานะ: {{ product?.isAvailable ? '✔' : '❌' }}</p>
+  <button (click)="close()">ปิด</button>
+</div>

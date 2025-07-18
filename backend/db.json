@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "กาแฟ",
+      "category": "เครื่องดื่ม",
+      "isAvailable": true
+    },
+    {
+      "id": "2",
+      "name": "ขนมปัง",
+      "category": "เบเกอรี่",
+      "isAvailable": false
+    },
+    {
+      "id": "3",
+      "name": "น้ำผลไม้",
+      "category": "เครื่องดื่ม",
+      "isAvailable": true
+    },
+    {
+      "id": "bfa5",
+      "name": "ขนมหวาน",
+      "category": "เบเกอรี่",
+      "isAvailable": true
+    },
+    {
+      "id": "bbe3",
+      "name": "บิงซู",
+      "category": "เบเกอรี่",
+      "isAvailable": false
+    }
+  ]
+}

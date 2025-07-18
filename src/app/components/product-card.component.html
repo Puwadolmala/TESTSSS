@@ -1,0 +1,36 @@
+<mat-card class="product-card m-4 p-4 w-72 shadow-lg border border-blue-200 rounded-xl transition-transform hover:scale-105 duration-300">
+  <!-- ไอคอนย้อนกลับที่มุมซ้ายบน -->
+  <mat-card-header>
+    <div mat-card-avatar class="avatar">
+      <mat-icon *ngIf="product.isAvailable" class="text-green-600">check_circle</mat-icon>
+      <mat-icon *ngIf="!product.isAvailable" class="text-red-500">cancel</mat-icon>
+    </div>
+    
+    <!-- ไอคอนย้อนกลับ -->
+    <button mat-icon-button class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    
+    <mat-card-title class="text-blue-800 font-semibold">{{ product.name }}</mat-card-title>
+    <mat-card-subtitle class="text-gray-600">ประเภท: {{ product.category }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p [ngClass]="product.isAvailable ? 'text-green-600' : 'text-red-500'">
+      สถานะ: {{ product.isAvailable ? '✔ มีสินค้า' : '❌ ไม่มีสินค้า' }}
+    </p>
+  </mat-card-content>
+
+  <!-- ปุ่มหรือไอคอนสำหรับการจัดการ -->
+  <mat-card-actions>
+    <!-- ไอคอนเพิ่มสินค้าในตะกร้า -->
+    <button mat-icon-button color="primary" (click)="addToCart()">
+      <mat-icon>add_shopping_cart</mat-icon> เพิ่มในตะกร้า
+    </button>
+
+    <!-- ไอคอนลบสินค้า -->
+    <button mat-icon-button color="warn" (click)="deleteProduct()">
+      <mat-icon>delete</mat-icon> ลบ
+    </button>
+  </mat-card-actions>
+</mat-card>
